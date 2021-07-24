@@ -5,7 +5,7 @@ const { Book, User } = require("../models");
 
 const resolvers = {
   Query: {
-    getSingleUser: async (parent, user ,context)=> {
+    me: async (parent, user ,context)=> {
       const foundUser = await User.findOne({
         $or: [
           { _id: context.user._id },
@@ -31,7 +31,7 @@ const resolvers = {
 
 
   Mutation: {
-    createUser: async (parent, { username, email, password }) => {
+    addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
 
       if (!user) {
@@ -81,7 +81,7 @@ const resolvers = {
       }
     },
     //MAY NEED TO UPDATE THIS CODE
-    deleteBook: async (parent, { bookId }, context) => {
+    removeBook: async (parent, { bookId }, context) => {
       const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
         { $pull: { savedBooks: { bookId: bookId } } },
