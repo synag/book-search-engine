@@ -40,8 +40,8 @@ Limited usage instructions.
 
 The sreenshot for the Google Books Search App is below. 
 
-![Google Books Search](./public/screenshot1.png)
-![Google Books Search](./public/screenshot2.png)
+![Google Books Search](.client/public/screenshot1.png)
+![Google Books Search](.client/public/screenshot2.png)
 
 ## License
 The license used for this project is MIT. Here is the license link https://opensource.org/licenses/MIT
